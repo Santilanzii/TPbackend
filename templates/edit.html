@@ -1,0 +1,16 @@
+{%extends 'layaout.html'%}
+
+{%block body%}
+
+<action>
+    <form action = "/update/{{contact.0}}" method="POST">
+        <input type ="text" name="nombre" placeholder="nombre" value ={{contact.1}}>
+        <!--<input type ="text" name="id" placeholder="id">-->
+        <input type ="text" name="celular" placeholder="celular" value ={{contact.3}}>
+        <input type ="text" name="correo" placeholder="correo" value ={{contact.2}}>
+        <button ytpe="submit">
+            Save
+        </button>
+    </form>
+</action>
+{%endblock%}
