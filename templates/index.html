@@ -22,40 +22,50 @@
 <h1>Sistema de empleados de rebuscados.inc</h1>
 <br></br>
 <h3>Agregue un nuevo empleado</h3>
+
 <form action = "/add_contact" method="POST">
 <input type ="text" name="nombre" placeholder="nombre">
 <!--<input type ="text" name="id" placeholder="id">-->
 <input type ="text" name="celular" placeholder="celular">
 <input type ="text" name="correo" placeholder="correo">
-<button ytpe="submit">
+
+<button ytpe="submit" class="btn btn-outline-light">
     Save
 </button>
 <br></br>
 <h3>Empleados registrados </h3>
+
+<!--Tabla -->
 <table>
-    <thread>
-        <tr>
-        <td>Nombre</td>    
-        <td>Celular</td>    
-        <td>Correo</td>    
-           
-        </tr>
-    </thread>
+    
+<table class="table table-hover">
+
+   
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Celular heading</th>
+        <th scope="col">Correo</th>
+      </tr>
+    </thead>
     <tbody>
-        {%for contact in contacts %}
-    <tr>
-        <td>{{contact.1}}</td>
-        <td>{{contact.3}}</td>
-        <td>{{contact.2}}</td>
-        <td>
-            <a href="/edit/{{contact.0}}">Editar<a/>
-            <a href="/delete/{{contact.0}}">Borrar</a>
-    </td>
-    </tr>
-        {%endfor %}
-    </tbody>
+        <tbody>
+            {%for contact in contacts %}
+        <tr>
+            <td>{{contact.1}}</td>
+            <td>{{contact.3}}</td>
+            <td>{{contact.2}}</td>
+            <td>
+                <a href="/edit/{{contact.0}}">Editar<a/>
+                <a href="/delete/{{contact.0}}">Borrar</a>
+        </td>
+        </tr>
+            {%endfor %}
+        </tbody>
 </table>
 
 {%endblock%}
 
 </form>
+
+
